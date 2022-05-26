@@ -1,4 +1,4 @@
-@media only screen and (max-width: 1920px) {
+@media only screen and (max-width: 1450px) {
     .logoimg {
         height: 50vh !important;
         margin-left: auto !important;
@@ -13,13 +13,25 @@
         margin-top: 5% !important;
         line-height: normal !important;
         margin-right: 0% !important;
+        font-size: 10vw !important;
     }
+    .title_span{
+        line-height: 10vw !important;
+    }
+    .div_title{
+        margin-top: 6vw !important;
+    }    
   }
+@media only screen and (max-width: 1200px) {
+    .title{
+        font-size: 12vw !important;
+    }
+    .title_span{
+        line-height: 13vw !important;
+    }
+}
 .div_title{
-    height: 100%;
+    height: fit-content;
     line-height: 85vh;
     margin-top: 0 !important;
-}
-.title{
-
 }
