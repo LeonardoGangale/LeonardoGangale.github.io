@@ -7,16 +7,52 @@
     <link rel="stylesheet" href="style.css">
     <script src="logic.js"></script>
     <title>Counter</title>
+    <link id="ciro" rel="icon" type="image" href="logo.png">
+
+    <!-- ICONS -->
+    <link href='icons.css' rel='stylesheet'>
+    <!--------------->
 </head>
 <body>
-    <div id="info">
-        <div id="item1" class="info_item"><p class="item_name">timer</p><p class="item_value" id="timer">0</p></div>
-        <div id="item2" class="info_item"><p class="item_name">cps</p><p  class="item_value" id="cps">0</p></div>
-        <div id="item3" class="info_item"><p class="item_name">clicks</p><p class="item_value" id="clicks">0</p></div>
+    <!-- HEADER -->
+    <div class="header">
+        <div style="display: flex;">
+            <img class="header_logo" src="logo.png">
+            <p class="header_text">&nbsp CPS test by Leonardo Gangale</p>
+        </div>
+        <div style="display: flex; width: fit-content;">
+            <button class="header_buttons" onclick="change_theme()"><i class="gg-dark-mode"></i></button>
+            <button class="header_buttons" id="restart_button" onclick="restart()"><i class="gg-undo"></i></button>
+        </div>    
     </div>
-        <div class="buttons">
-            <button class="main_button" id="main_button" onclick="first_btn_click()">click here to start</button>
-        </div> 
-    
+
+    <!---------------------- MAIN AREA ---------------------->
+    <div class="main_area">
+        <div>
+            <!-- INFORMATION CARDS-->
+            <div id="info">
+                <div id="item1" class="info_item"><p class="item_name">timer</p><p class="item_value" id="timer">0</p></div>
+                <div id="item2" class="info_item"><p id="cps_text" class="item_name">cps</p><p  class="item_value" id="cps">0</p></div>
+                <div id="item3" class="info_item"><p class="item_name">clicks</p><p class="item_value" id="clicks">0</p></div>
+            </div>
+                <!-- CLICK BUTTON -->
+                <div class="buttons">
+                    <button class="main_button" id="main_button" onclick="first_btn_click()">click here to start</button>
+                </div> 
+        </div>
+        <!-- BUTTONS FOR TIMER -->
+        <div class="time_selector">
+            <button class="time_selector_btn">1 SECOND TEST</button>
+            <button class="time_selector_btn">2 SECOND TEST</button>
+            <button class="time_selector_btn">3 SECOND TEST</button>
+            <button class="time_selector_btn">5 SECOND TEST</button>
+            <button class="time_selector_btn">10 SECOND TEST</button>
+            <button class="time_selector_btn">15 SECOND TEST</button>
+            <button class="time_selector_btn">30 SECOND TEST</button>
+            <button class="time_selector_btn">60 SECOND TEST</button>
+        </div>
+    </div>
+    <!--------------------------------------------------------->
+
 </body>
 </html>
