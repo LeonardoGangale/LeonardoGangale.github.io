@@ -17,12 +17,13 @@ function btn_click(){
     
 }
 var new_time_value = 0;
+var max_time_value = 5;
 
 function start_timer(){
     var timer = document.getElementById("timer");
     var main_button = document.getElementById("main_button");
     new_time_value += 0.01;
-    if (new_time_value < 5){
+    if (new_time_value < max_time_value){
         timer.innerHTML = new_time_value.toFixed(2);
     } else{
         clearInterval(timer_start);
@@ -49,6 +50,14 @@ function change_icon(){
 blinking_icon = setInterval(change_icon, 1000);
 
 
+function change_timer_value(new_value){
+    max_time_value = new_value;
+    var popup = document.getElementsByClassName("popup");
+    popup[0].classList.add("active");
+    setTimeout(function(){
+        popup[0].classList.remove("active");
+    }, 2000)
+}
 
 
 function restart(){
@@ -88,16 +97,19 @@ function change_theme(){
 function change_text(){
     var cps_text = document.getElementById("cps_text");
     var header_text = document.getElementsByClassName("header_text");
-    var width = parseInt(window.innerWidth)
+    var width = parseInt(window.innerWidth);
     if (width > 1000){
         cps_text.innerHTML = "average cps";
     } else {
         cps_text.innerHTML = "cps";
     }
     if (width < 600){
-        header_text[0].innerHTML = "&nbsp&nbspCPS test by G.L."
+        header_text[0].innerHTML = "&nbsp&nbspCPS test by G.L.";
+    } else {
+        header_text[0].innerHTML = "&nbsp CPS test by Leonardo Gangale";
     }
 }
 
+window.onload = change_text;
+
 window.addEventListener("resize", change_text);
-    

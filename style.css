@@ -96,6 +96,9 @@ body{
     color: aliceblue;
     border: 0px;
 }
+.time_selector_btn:active{
+    background-color: rgb(0, 67, 167);
+}
 /* ------------------------------------------------- */
 
 
@@ -110,6 +113,30 @@ body{
     font-size: 20px;
     margin: 10px;
 }
+/*-----------------------------------*/
+
+/* POP-UP STYLE */
+.popup{
+    position: fixed;
+    top: 1.5%;
+    left: 50%;
+    transform: translate(-50%) scale(0);
+    transition: 200ms ease-in-out;
+    background-color: aliceblue;
+    padding: 0 15px 0 15px;
+    display: flex;
+    align-items: center;
+    border: 0px;
+    border-radius: 8px;
+    z-index: 10;
+}
+.popup.active{
+    transform: translate(-50%) scale(1);
+}
+.popup_text{
+    margin-right: 10px;
+}
+/*-----------------------*/
 
 
 /* --------------------------------------- LIGHT MODE  --------------------------------------- */
