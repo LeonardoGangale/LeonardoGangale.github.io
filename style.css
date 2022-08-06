@@ -43,8 +43,8 @@ body{
     transform: translate(-50%, -50%);
 }
 .table{
-    width: 70vw;
-    height: 70vw;
+    width: 90vw;
+    height: 90vw;
     max-width: 500px;
     max-height: 500px;
     text-align: center;
