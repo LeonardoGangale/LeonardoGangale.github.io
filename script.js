@@ -20,6 +20,7 @@ function input(btn_number){
         btn.innerHTML = "&times";
         btn.style.color = "red";
         btn.style.fontSize = "110px"
+        btn.style.fontWeight = "400"
         player_turn_text.innerHTML = "2";
         cross_or_circle = "O";
         player_1.push(btn_number);
