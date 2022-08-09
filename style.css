@@ -98,9 +98,7 @@ body{
     align-items: center;
     display: flex;
     position: fixed;
-    left: 50%;
-    top: 0%;
-    transform: translate(-50%, -100%);
+    transform: translate(0%, -100%);
     transition: all 0.4s ease-in-out !important;
     overflow: hidden;
     z-index: 9;
@@ -255,20 +253,25 @@ body{
         left: 50%;
         transform: translate(-50%);
     }
+    .future_skills_container{
+        display: inline;
+    }
 }
 
 @media only screen and (max-width: 650px){
     .name{
-        font-size: 45px;
+        font-size: 60px;
         left: 0 !important;
         right: 0;
+        top: 30%;
         width: 100%;
         text-align: center;
     }
     .semi_trasparent_text{
-        font-size: 55px;
+        font-size: 65px;
         right: 0;
         left: 0;
+        top: 25%;
         width: 100%;
         text-align: center;
     }
@@ -280,6 +283,9 @@ body{
     }
     .header_icons{
         width: 200px;
+    }
+    .header_name{
+        font-size: 20px;
     }
     .menu_list{
         font-size: 60px;
@@ -314,5 +320,8 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    #future_skills_title{
+        font-size: 42px;
     }
 }

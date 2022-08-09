@@ -4,7 +4,7 @@ function show_menu(){
     var menu_btn = document.getElementsByClassName("header_menu_btn")[0];
     window.menu_btn_svg = menu_btn.innerHTML;
 
-    menu.style.transform = "translate(-50%, 0%)"
+    menu.style.transform = "translate(0%, 0%)"
     menu_btn.onclick = close_menu
 
     menu_btn.classList.add("animate")
@@ -21,7 +21,7 @@ function close_menu(){
     var menu_btn = document.getElementsByClassName("header_menu_btn")[0];
 
 
-    menu.style.transform = "translate(-50%, -100%)"
+    menu.style.transform = "translate(0%, -100%)"
 
     menu_btn.innerHTML = menu_btn_svg
 
