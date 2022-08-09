@@ -1,0 +1,318 @@
+@font-face {
+    font-family: Futura;
+    src: url(Futura-Med.otf);
+  }
+
+body{
+    margin: 0;
+    background-color: #222222;
+    overflow-x: hidden;
+}
+
+
+.main_container{
+    background: linear-gradient(90deg,#ff6a0e, #d900ff);
+    height: 60vh;
+    width: 100vw ;
+}  
+
+
+.header{
+    width: 100vw;
+    height: 70px;
+    font-family: 'Futura';
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    z-index: 10;
+}
+.header_name{
+    margin: 0px 0px 0px 12px;
+    font-size: 25px;
+    color: #fafafa;
+}
+.header_icons{
+    width: 230px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 15px;
+}
+.name{
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 90px;
+    line-height: 115px;
+    margin: 0;
+    color: #ffffff;
+    position: relative;
+    top: 20vh;
+    left: 10%;
+    width: fit-content;
+}
+
+.semi_trasparent_text{
+    font-family: 'Futura';
+    font-size: 100px;
+    color: #ffffff80;
+    position: relative;
+    right: -50%;
+    top: 26%;
+    width: min-content;
+}
+.custom-shape-divider-bottom-1659997475 {
+    position: absolute;
+    bottom: 40vh;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1659997475 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 79px;
+}
+
+.custom-shape-divider-bottom-1659997475 .shape-fill {
+    fill: #222222;
+}
+
+#menu{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(rgb(224, 0, 224), rgb(0, 0, 201));
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: fixed;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%, -100%);
+    transition: all 0.4s ease-in-out !important;
+    overflow: hidden;
+    z-index: 9;
+}
+
+.menu_list{
+    font-size: 110px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Futura';
+    color: #fafafa;
+}
+
+.menu_list_item{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    transition: 200ms ease-in-out;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+
+
+.menu_list_item:after {
+    content: '';
+    position: absolute;
+    width: 95%;
+    transform: scaleX(0);
+    height: 8px;
+    bottom: 0;
+    left: 2.5%;
+    background-color: #ffffff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+  
+  .menu_list_item:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.container{
+    width: 100%;
+    font-family: 'Futura';
+}
+
+.skills_title{  
+    font-size: 70px;
+    width: 100vw;
+    text-align: center;
+    color: #fafafa;
+    font-family: 'Futura';
+}
+.card_container{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    overflow:hidden;
+    height: 300px;
+}
+.card{
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    border-radius: 30px;
+    font-family: 'Futura';  
+}
+
+.card_text{
+    font-size: 50px;
+    width: 100%;
+    text-align: end;
+    margin-left: 20px;
+}
+
+.card_image{
+    aspect-ratio: 1/1;
+    height: 150px;
+    position: relative;
+    transform: translate(55px);
+    padding: 10px 10px 10px 0px;
+    border-radius: 50%;
+}
+
+.big_card{
+    width: 500px ;
+}
+
+.outer_card{
+    width: 375px;
+    height: 300px;
+}
+
+.outer_big_card{
+    width: 550px;
+    height: 300px;
+}
+
+.future_skills_container{
+    height: 500px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card_subcontainer{
+    display: flex; 
+    justify-content: space-around; 
+    width: 64vw !important;
+}
+
+@media only screen and (max-width: 800px){
+    .name{
+        font-size: 55px;
+        left: 10%;
+    }
+    .semi_trasparent_text{
+        font-size: 65px;
+        right: -35%;
+    }
+    .menu_list{
+        font-size: 80px;
+    }
+}
+
+@media only screen and (min-width: 1920px){
+    .name{
+        left: 20%;
+    }
+}
+
+@media only screen and (max-width: 1200px){
+    .card_container{
+        display: inline;
+    }
+    .card_subcontainer{
+        width: 100vw !important;
+    }
+    #css_card{
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    .outer_big_card{
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+    }
+}
+
+@media only screen and (max-width: 650px){
+    .name{
+        font-size: 45px;
+        left: 0 !important;
+        right: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .semi_trasparent_text{
+        font-size: 55px;
+        right: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .main_container{
+        height: 50vh;
+    }
+    .custom-shape-divider-bottom-1659997475{
+        bottom: 50vh;
+    }
+    .header_icons{
+        width: 200px;
+    }
+    .menu_list{
+        font-size: 60px;
+    }
+    .card_text{
+        font-size: 40px;
+        text-align: end !important;
+    }
+    .card{
+        height: 150px;
+    }
+    .card_image{
+        height: 100px;
+    }
+    .card_subcontainer{
+        display: inline;
+    }
+    .outer_card{
+        width: 100vw;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .big_card{
+        width: 350px;
+        height: 150px;
+    }
+    .outer_big_card{
+        width: 100vw;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

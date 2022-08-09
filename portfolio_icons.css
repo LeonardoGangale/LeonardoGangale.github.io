@@ -1,0 +1,15 @@
+.header_icon{
+    height: 70px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.header_menu_btn{
+    height: 70px;
+    width: 38px;
+    background-color: transparent;
+    border: 0px;
+    padding: 0%;
+}
+
