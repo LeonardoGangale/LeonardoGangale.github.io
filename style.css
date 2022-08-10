@@ -284,9 +284,6 @@ html{
     .main_container{
         height: 50vh;
     }
-    .custom-shape-divider-bottom-1659997475{
-        bottom: calc(50vh - 1px);
-    }
     .header_icons{
         width: 200px;
     }
