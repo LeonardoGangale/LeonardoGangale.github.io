@@ -49,4 +49,6 @@ function on_resize(){
     }
 }
 
+setTimeout(on_resize, 100)
+
 window.addEventListener("resize", on_resize)
