@@ -124,6 +124,7 @@ html{
     position: relative;
     cursor: pointer;
     user-select: none;
+    -webkit-user-select: none;
 }
 
 
@@ -359,10 +360,8 @@ html{
 }
 
 /* FOR GOOGLE CHROME */
-.page-header {
-    @supports (-webkit-appearance:none) {
-      .os-android & {
-        min-height: calc(100vh - 56px);
-      }
-    }
-  }
+html, body { height: 100vh; }
+.footer-element { 
+  position: fixed; 
+  bottom: calc(10px + (100vh - 100%));
+}
