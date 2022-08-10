@@ -72,8 +72,8 @@ html{
     width: min-content;
 }
 .custom-shape-divider-bottom-1659997475 {
-    position: absolute;
-    bottom: calc(40vh -  1px);
+    position: relative;
+    bottom: 79px;
     left: 0;
     width: 100%;
     overflow: hidden;
