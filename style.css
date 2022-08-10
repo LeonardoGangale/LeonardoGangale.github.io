@@ -71,7 +71,7 @@ body{
 }
 .custom-shape-divider-bottom-1659997475 {
     position: absolute;
-    bottom: 40vh;
+    bottom: calc(40vh -  1px);
     left: 0;
     width: 100%;
     overflow: hidden;
@@ -121,6 +121,7 @@ body{
     display: inline-block;
     position: relative;
     cursor: pointer;
+    user-select: none;
 }
 
 
@@ -215,7 +216,9 @@ body{
     justify-content: space-around; 
     width: 64vw !important;
 }
-
+.social_icons{
+    display: none;
+}
 @media only screen and (max-width: 800px){
     .name{
         font-size: 55px;
@@ -279,7 +282,7 @@ body{
         height: 50vh;
     }
     .custom-shape-divider-bottom-1659997475{
-        bottom: 50vh;
+        bottom: calc(50vh - 1px);
     }
     .header_icons{
         width: 200px;
@@ -295,33 +298,60 @@ body{
         text-align: end !important;
     }
     .card{
+        width: 250px;
         height: 150px;
     }
     .card_image{
         height: 100px;
+        transform: translate(30px);
     }
     .card_subcontainer{
         display: inline;
     }
     .outer_card{
         width: 100vw;
-        height: 200px;
+        height: 170px;
         display: flex;
         justify-content: center;
         align-items: center;
     }
     .big_card{
-        width: 350px;
+        width: 250px;
         height: 150px;
+    }
+
+    .big_card_text{
+        font-size: 32px;
     }
     .outer_big_card{
         width: 100vw;
-        height: 200px;
+        height: 170px;
         display: flex;
         justify-content: center;
         align-items: center;
     }
     #future_skills_title{
         font-size: 42px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .social_icons{
+        display: flex;
+        width: 100vw;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .menu_list_item{
+        font-size: 50px;
+    }
+    .name{
+        font-size: 36px ;
+    }
+    .semi_trasparent_text{
+        font-size: 40px;
+    }
+    .skills_title{
+        font-size: 30px;
     }
 }

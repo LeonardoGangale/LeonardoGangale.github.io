@@ -29,3 +29,24 @@ function close_menu(){
     menu_btn.onclick = show_menu
 
 }
+
+
+function on_resize(){
+    var width = window.innerWidth
+    var ig_link = document.getElementById("instagram_link")
+    var twitter_link = document.getElementById("twitter_link")
+    var icons_container = document.getElementsByClassName("header_icons")[0]
+
+    if (width < 450){
+        ig_link.style.display = "none"
+        twitter_link.style.display = "none"
+        icons_container.style.width = "70px"
+    } else{
+        ig_link.style.display = "flex"
+        twitter_link.style.display = "flex"
+        icons_container.style.width = "200px"
+        icons_removed = false
+    }
+}
+
+window.addEventListener("resize", on_resize)
