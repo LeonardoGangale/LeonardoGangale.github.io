@@ -113,18 +113,21 @@ html{
     padding: 0;
     text-align: center;
     font-family: 'Futura';
-    color: #fafafa;
+}
+.menu_link{
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    color:#fafafa ;
+    display: flex;
+    justify-content: center;
 }
 
 .menu_list_item{
-    margin-top: 30px;
-    margin-bottom: 30px;
     transition: 200ms ease-in-out;
     display: inline-block;
     position: relative;
-    cursor: pointer;
-    user-select: none;
-    -webkit-user-select: none;
+    margin: 20px 0px 20px 0px;
 }
 
 
@@ -367,7 +370,7 @@ html{
     .project_name{
         font-size: 26px;
         text-align: center;
-        padding: 20px 0px 20px 0px;
+        padding: 30px 0px 30px 0px;
         margin: 0;
     }
     .project_name:hover{
