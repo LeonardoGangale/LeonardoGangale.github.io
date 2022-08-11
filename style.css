@@ -1,364 +1,188 @@
-@font-face {
-    font-family: Futura;
-    src: url(Futura-Med.otf);
-  }
+/* import font*/
+@import url('https://fonts.googleapis.com/css2?family=Epilogue&display=swap');
+
+
 
 body{
+    background-color: rgb(38, 38, 38);
+    font-family: 'Epilogue', sans-serif;
     margin: 0;
-    background-color: #222222;
-    overflow-x: hidden;
+    transition: 0.6s;
 }
-html{
-    height: 100%;
+::selection{
+    background: rgb(255, 37, 37);
+}
+#info{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 12px 10px 12px;
 }
 
-.main_container{
-    background: linear-gradient(90deg,#ff6a0e, #d900ff);
-    height: 60vh;
-    width: 100vw ;
-}  
-
+/* HEADER SYLE */
 
 .header{
-    width: 100vw;
-    height: 70px;
-    font-family: 'Futura';
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px);
+    background-color: rgb(63, 63, 63);
+    padding: 10px 0 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.header_text{
+    font-size: 20px;
+    color: aliceblue;                                                                       
+}
+.header_buttons{
+    background-color: transparent !important;
+    border: 0px;
+    margin-right: 15px;
+    margin-left: 10px;
+}
+.header_logo{
+    height: 60px;
+    aspect-ratio: 98 / 159;
+    margin-left: 10px;
+}
+
+/* -------------------- */
+
+/* MAIN AREA STYLE */
+    .main_area{
+        display: flex;
+    }
+/* --------------------------- */
+
+/* INFORMATION CARDS STYLE */
+.info_item{
+    font-size: 30px;
+    text-align: center;
+    color: aliceblue;
+}
+#item1{
+    background: linear-gradient(90deg, lime, green);
+    padding: 0% 6vw 0 6vw;
+    border-radius: 15px;
+}
+#item2{
+    background: linear-gradient(90deg, rgb(0, 34, 255), rgb(0, 191, 255));
+    padding: 0% 6vw 0 6vw;
+    border-radius: 15px;
+}
+#item3{
+    background: linear-gradient(90deg, rgb(255, 208, 0), rgb(255, 136, 0));
+    padding: 0% 6vw 0 6vw;
+    border-radius: 15px;
+}
+.item_name{
+    margin-bottom: 1vh !important;
+    margin-top: 20px;
+}
+.item_value{
+    margin-top: 0 !important;
+    margin-bottom: 20px;
+}
+/* ------------------------------------------- */
+
+
+/* TIME SELECTOR BUTTONS STYLE */
+.time_selector{
+    margin-top: 10px;
+}
+
+.time_selector_btn{
+    width: calc(20vw - 20px);
+    height: calc(100% / 8 - 5px);
+    margin-bottom: 4px;
+    border-radius: 6px;
+    background-color: rgb(110, 110, 110);
+    color: aliceblue;
+    border: 0px;
+}
+.time_selector_btn:active{
+    background-color: rgb(0, 67, 167);
+}
+/* ------------------------------------------------- */
+
+
+/* CLICK BUTTON STYLE */
+.main_button{
+    width: 80vw;
+    background-color: rgb(69, 69, 69);
+    color: aliceblue;
+    height: 20vh;
+    border-radius: 10px;
+    border: 4px solid white;
+    font-size: 20px;
+    margin: 10px;
+}
+/*-----------------------------------*/
+
+/* POP-UP STYLE */
+.popup{
     position: fixed;
+    top: 1.5%;
+    left: 50%;
+    transform: translate(-50%) scale(0);
+    transition: 200ms ease-in-out;
+    background-color: aliceblue;
+    padding: 0 15px 0 15px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    top: 0%;
-    left: 0%;
-    right: 0%;
-    bottom: 0%;
+    border: 0px;
+    border-radius: 8px;
     z-index: 10;
 }
-.header_name{
-    margin: 0px 0px 0px 12px;
-    font-size: 25px;
-    color: #fafafa;
+.popup.active{
+    transform: translate(-50%) scale(1);
 }
-.header_icons{
-    width: 230px;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-right: 15px;
+.popup_text{
+    margin-right: 10px;
 }
-.name{
-    font-family: 'Futura';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 90px;
-    line-height: 115px;
-    margin: 0;
-    color: #ffffff;
-    position: relative;
-    top: 20vh;
-    left: 10%;
-    width: fit-content;
-}
+/*-----------------------*/
 
-.semi_trasparent_text{
-    font-family: 'Futura';
-    font-size: 100px;
-    color: #ffffff80;
-    position: relative;
-    right: -50%;
-    top: 26%;
-    width: min-content;
-}
-.custom-shape-divider-bottom-1659997475 {
-    position: relative;
-    bottom: 79px;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-}
 
-.custom-shape-divider-bottom-1659997475 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 79px;
+/* --------------------------------------- LIGHT MODE  --------------------------------------- */
+.body_light_mode{
+    background-color: whitesmoke;
 }
-
-.custom-shape-divider-bottom-1659997475 .shape-fill {
-    fill: #222222;
+.main_button_light_mode{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 33%, rgba(0,212,255,1) 100%); 
+    border: 4px solid rgb(59, 59, 59);
 }
-
-#menu{
-    height: 100vh;
-    width: 100vw;
-    background: linear-gradient(rgb(224, 0, 224), rgb(0, 0, 201));
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    position: fixed;
-    transform: translate(0%, -100%);
-    transition: all 0.4s ease-in-out !important;
-    overflow: hidden;
-    z-index: 9;
-}
-
-.menu_list{
-    font-size: 110px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    font-family: 'Futura';
-    color: #fafafa;
-}
-
-.menu_list_item{
-    margin-top: 30px;
-    margin-bottom: 30px;
-    transition: 200ms ease-in-out;
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    user-select: none;
-    -webkit-user-select: none;
-}
+/*-----------------------------------------------------------------------------------------------------*/
 
 
 
-.menu_list_item:after {
-    content: '';
-    position: absolute;
-    width: 95%;
-    transform: scaleX(0);
-    height: 8px;
-    bottom: 0;
-    left: 2.5%;
-    background-color: #ffffff;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-}
-  
-  .menu_list_item:hover:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
 
-.container{
-    width: 100%;
-    font-family: 'Futura';
-}
 
-.skills_title{  
-    font-size: 70px;
-    width: 100vw;
-    text-align: center;
-    color: #fafafa;
-    font-family: 'Futura';
-}
-.card_container{
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    overflow:hidden;
-    height: 300px;
-}
-.card{
-    width: 300px;
-    height: 200px;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    border-radius: 30px;
-    font-family: 'Futura';  
-}
 
-.card_text{
-    font-size: 50px;
-    width: 100%;
-    text-align: end;
-    margin-left: 20px;
-}
 
-.card_image{
-    aspect-ratio: 1/1;
-    height: 150px;
-    position: relative;
-    transform: translate(55px);
-    padding: 10px 10px 10px 0px;
-    border-radius: 50%;
-}
 
-.big_card{
-    width: 500px ;
-}
 
-.outer_card{
-    width: 375px;
-    height: 300px;
-}
 
-.outer_big_card{
-    width: 550px;
-    height: 300px;
-}
 
-.future_skills_container{
-    height: 500px;
-    width: 100vw;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.card_subcontainer{
-    display: flex; 
-    justify-content: space-around; 
-    width: 64vw !important;
-}
-.social_icons{
-    display: none;
-}
-@media only screen and (max-width: 800px){
-    .name{
-        font-size: 55px;
-        left: 10%;
-    }
-    .semi_trasparent_text{
-        font-size: 65px;
-        right: -35%;
-    }
-    .menu_list{
-        font-size: 80px;
-    }
-}
-
-@media only screen and (min-width: 1920px){
-    .name{
-        left: 20%;
-    }
-}
-
-@media only screen and (max-width: 1200px){
-    .card_container{
-        display: inline;
-    }
-    .card_subcontainer{
-        width: 100vw !important;
-    }
-    #css_card{
-        position: relative;
-        left: 50%;
-        transform: translate(-50%);
-    }
-    .outer_big_card{
-        position: relative;
-        left: 50%;
-        transform: translate(-50%);
-    }
-    .future_skills_container{
-        display: inline;
-    }
-}
-
-@media only screen and (max-width: 650px){
-    .name{
-        font-size: 60px;
-        left: 0 !important;
-        right: 0;
-        top: 30%;
-        width: 100%;
-        text-align: center;
-    }
-    .semi_trasparent_text{
-        font-size: 65px;
-        right: 0;
-        left: 0;
-        top: 25%;
-        width: 100%;
-        text-align: center;
-    }
-    .main_container{
-        height: 50vh;
-    }
-    .header_icons{
-        width: 200px;
-    }
-    .header_name{
-        font-size: 20px;
-    }
-    .menu_list{
-        font-size: 60px;
-    }
-    .card_text{
-        font-size: 40px;
-        text-align: end !important;
-    }
-    .card{
-        width: 250px;
-        height: 150px;
-    }
-    .card_image{
-        height: 100px;
-        transform: translate(30px);
-    }
-    .card_subcontainer{
-        display: inline;
-    }
-    .outer_card{
-        width: 100vw;
-        height: 170px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .big_card{
-        width: 250px;
-        height: 150px;
-    }
-
-    .big_card_text{
-        font-size: 32px;
-    }
-    .outer_big_card{
-        width: 100vw;
-        height: 170px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #future_skills_title{
-        font-size: 42px;
-    }
-}
-
-@media only screen and (max-width: 450px) {
-    .social_icons{
-        display: flex;
-        width: 100vw;
-        align-items: center;
-        justify-content: space-evenly;
-    }
-    .menu_list_item{
-        font-size: 50px;
-    }
-    .name{
-        font-size: 36px ;
-    }
-    .semi_trasparent_text{
+@media (min-width: 1000px){
+    .info_item{
         font-size: 40px;
     }
-    .skills_title{
-        font-size: 30px;
-    }
 }
 
-/* FOR GOOGLE CHROME */
-html, body { height: 100vh; }
-.footer-element { 
-  position: fixed; 
-  bottom: calc(10px + (100vh - 100%));
+@media (max-width: 800px){
+    .main_area{
+        display: block;
+    }
+    .main_button{
+        width: calc(100vw - 20px);
+    }
+    .time_selector_btn{
+        width: calc(100vw -  20px);
+        height: 50px;
+        margin: 5px 10px 5px 10px;
+    }
+    @media (max-width: 600px){
+        .info_item{
+            font-size: 20px;
+            padding: 0 !important;
+            width: calc(88vw / 3);
+        }
+    }
 }
