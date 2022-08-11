@@ -181,6 +181,8 @@ body{
     @media (max-width: 600px){
         .info_item{
             font-size: 20px;
+            padding: 0 !important;
+            width: calc(88vw / 3);
         }
     }
 }
