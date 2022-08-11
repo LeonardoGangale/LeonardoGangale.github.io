@@ -1,15 +1,15 @@
 var cross_or_circle = "X";
 var player_1 = [];
 var player_2 = [];
-const winning_combination = [
-    "147",
-    "258",
-    "369",
-    "123",
-    "456", 
-    "789",
-    "159",
-    "357"
+const winning_combinations = [
+    [1,4,7],
+    [2,5,8],
+    [3,6,9],
+    [1,2,3],
+    [4,5,6], 
+    [7,8,9],
+    [1,5,9],
+    [3,5,7]
 ]
 
 function input(btn_number){
@@ -36,31 +36,33 @@ function input(btn_number){
 
     // CHECKS IF PLAYER WINS
 
-    // SORT
-    player_1_sorted = player_1.sort();
-    player_1_string = player_1_sorted.join("")
+    var winning_combination = []
+    var winner = ""
 
-    player_2_sorted = player_2.sort();
-    player_2_string = player_2_sorted.join("")
-
-    var player_1_winning_combination = ""
-    
-    player_1_wins = winning_combination.some(function(combination){
-        if (player_1_string.includes(combination)){
-            player_1_winning_combination = combination;
-            return true;
+    player_1_wins = winning_combinations.forEach(function(combo){
+        combo_check = combo.every(function(num){
+            return player_1.includes(num)
+        })
+        if (combo_check == true){
+            winner = "player1"
+            winning_combination = combo
         }
-        return false;
-    });
-    var  player_2_winning_combination = ""
-
-    player_2_wins = winning_combination.some(function(combination){
-        if(player_2_string.includes(combination)){
-            player_2_winning_combination = combination;
-            return true;
-        }
-        return false;
     })
+    
+
+
+    player_2_wins = winning_combinations.forEach(function(combo){
+        combo_check = combo.every(function(num){
+            return player_2.includes(num)
+        })
+        if (combo_check == true){
+            winner = "player2"
+            winning_combination = combo
+        }
+    })
+
+    winning_combination =  winning_combination.join("")
+    console.log(winning_combination)
 
     // WIN MESSAGE AND WIN LINE
     var canvas = document.getElementById("win_lines");
@@ -70,11 +72,11 @@ function input(btn_number){
     var win_feedback = document.getElementById("win_feedback");
     var win_feedback_box = document.getElementById("win_feedback_box");
 
-    if (player_1_wins){
+    if (winner === "player1"){
         win_feedback_box.classList.add("active");
         win_feedback.innerHTML = "Vince giocatore 1!"
         win_line.strokeStyle = "#FF0000";
-        switch(player_1_winning_combination){
+        switch(winning_combination){
             // VERTICAL LINES
             case "123":
                 win_line.beginPath();
@@ -129,11 +131,11 @@ function input(btn_number){
                 win_line.stroke();
                 break;
         }
-    } else if (player_2_wins){
+    } else if (winner === "player2"){
         win_feedback_box.classList.add("active");
         win_feedback.innerHTML = "Vince giocatore 2!"
         win_line.strokeStyle = "#0000FF";
-        switch(player_2_winning_combination){
+        switch(winning_combination){
             // VERTICAL LINES
             case "123":
                 win_line.beginPath();
@@ -155,7 +157,7 @@ function input(btn_number){
                 break;
 
             // HORIZONTAL LINES
-            case "147":
+            case "147": 
                 win_line.beginPath();
                 win_line.moveTo(0, 23);
                 win_line.lineTo(500, 23 );
