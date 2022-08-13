@@ -52,3 +52,25 @@ function on_resize(){
 setTimeout(on_resize, 100)
 
 window.addEventListener("resize", on_resize)
+
+var ciro = 54
+
+function auto_height(form_input){
+    form_input.style.height = "46px"
+    form_input.style.height =   (form_input.scrollHeight )+"px"
+    if(parseInt(form_input.style.height) > ciro ){
+        window.scrollBy(0, 40)
+    }
+
+}
+
+function input_form_focus(value){
+    window.form_description = document.getElementById(`description_${value}`)
+
+    form_description.style.color = "rgb(94, 218, 255)"
+}
+
+function  input_form_focusout(ciro){
+    form_description.style.color = "#fafafa"
+}
+
