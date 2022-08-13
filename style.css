@@ -225,9 +225,10 @@ html{
     display: none;
 }
 .projects_container{
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
 }
 .project_box{
     width: 90vw;
@@ -270,6 +271,53 @@ html{
     color: #fafafa;
 
 }
+.contact_form{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact_description{
+    color:  #fafafa;
+    font-size: 40px;
+    font-family: 'Futura';
+}
+
+.contact_input{
+    width: 40vw;
+    min-width: 600px;
+    max-width: 1000px;
+    height: 50px;
+    resize: none;
+    font-size: 28px;
+    font-family: 'Futura';
+    border-right: 5px solid rgb(94, 218, 255);
+    border-bottom: 5px solid rgb(94, 218, 255);
+    border-top: none;
+    border-left: none;
+    border-radius: 8px;
+    transition: cubic-bezier(0,.97,.86,.15);
+}
+
+.contact_input:focus{
+    outline: none;
+}
+
+.submit_btn{
+    width: 50%;
+    height: 60px;
+    margin-bottom: 50px;
+    margin-top: 15px;
+    position: relative;
+    left: 50%;
+    background-color: #fafafa;
+    font-family: 'Futura';
+    font-size: 24px;
+    border-radius: 30px;
+    border-color: #fafafa;
+    cursor: not-allowed;
+}
+
 @media only screen and (max-width: 800px){
     .name{
         font-size: 55px;
@@ -281,6 +329,13 @@ html{
     }
     .menu_list{
         font-size: 80px;
+    }
+}
+
+@media only screen and (min-width: 1920px){
+    .project_box{
+        margin-left: calc((100vw - 90vw) / 2);
+        margin-right: calc((100vw - 90vw) / 2);
     }
 }
 

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="portfolio_icons.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="script.js"></script>
     <title>L.G. PORTFOLIO</title>
 </head>
@@ -162,6 +163,24 @@
             </div>
             
     </div>
-    </div>
+    <p class="title">Contact me</p>
+    <form class="contact_form" action="https://formsubmit.co/dfdeb77a893ec4b95e1b5f473a30083a" method="POST">
+        <div>
+            <div>
+                <p id="description_1" class="contact_description">your e-mail</p>
+                <input type="email" onfocus="input_form_focus(`1`)" onfocusout=" input_form_focusout()" on class="contact_input" placeholder="mail@example.com" required>
+            </div>
+            <div>
+                <p id="description_2" class="contact_description">name</p>
+                <input type="" onfocus="input_form_focus(`2`)" onfocusout=" input_form_focusout()" class="contact_input" required>
+            </div>
+            <div>
+                <p id="description_3" class="contact_description">object</p>
+                <textarea  onfocus="input_form_focus(`3`)"  onfocusout=" input_form_focusout()" oninput="auto_height(this)" class="contact_input" required></textarea>
+            </div>
+            <button class="submit_btn"  type="submit">submit</button>
+        </div>
+    </form>
+
 </body>
 </html>
