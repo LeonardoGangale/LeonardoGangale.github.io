@@ -30,6 +30,38 @@ function close_menu(){
 
 }
 
+var bodyRect = document.body.getBoundingClientRect()
+const popup = document.getElementById("popup")
+const popup_container = document.getElementById("popup_container")
+const indicated_text = document.getElementById("popup_positon_trigger")
+
+var pop_up_shown = false
+
+function on_scroll(){
+    var prova = document.getElementById("popup_positon_trigger").getBoundingClientRect()
+    console.log(prova.top, window.scrollY)
+    if(prova.top < 600   && pop_up_shown === false){
+        show_popup()
+        pop_up_shown = true
+    }
+}
+
+setTimeout(window.onscroll = on_scroll, 500)
+
+
+function show_popup(){
+    popup.style.display = "flex"
+    indicated_text.style.color = "rgb(0 78 255)"
+    setTimeout(function(){
+        popup.style.transform = "translate(-50%, 30px) scale(1)"
+    }, 100)
+    setTimeout(hide_popup, 10000)
+}
+
+function hide_popup(){
+    indicated_text.style.color = ""
+    popup.style.display = "none"
+}
 
 function on_resize(){
     var width = window.innerWidth
@@ -53,12 +85,11 @@ setTimeout(on_resize, 100)
 
 window.addEventListener("resize", on_resize)
 
-var ciro = 54
 
 function auto_height(form_input){
     form_input.style.height = "46px"
     form_input.style.height =   (form_input.scrollHeight )+"px"
-    if(parseInt(form_input.style.height) > ciro ){
+    if(parseInt(form_input.style.height) > 54 ){
         window.scrollBy(0, 40)
     }
 
@@ -74,3 +105,20 @@ function  input_form_focusout(ciro){
     form_description.style.color = "#fafafa"
 }
 
+const email = document.getElementById("email_input")
+const name_input = document.getElementById("name_input")
+const subject = document.getElementById("subject_input")
+const submit_btn = document.getElementById("submit_btn")
+
+function check_input(){
+    if(email.checkValidity() && name_input.value.length > 1 && subject.value.length > 1){
+        submit_btn.style.backgroundColor = "green"
+        submit_btn.style.color = "#fafafa"
+        submit_btn.style.cursor = "pointer"
+    } else{
+        submit_btn.style.backgroundColor = "#fafafa"
+        submit_btn.style.color = "black"
+        submit_btn.style.cursor = "not-allowed"
+    }
+
+}

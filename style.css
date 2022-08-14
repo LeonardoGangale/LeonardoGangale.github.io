@@ -237,6 +237,33 @@ html{
     box-shadow: 2px 2px 2px white ;
     margin-bottom: 100px;
 }
+#popup_container{
+    width: fit-content;
+}
+#popup{
+    background-color: #ffffff;
+    width: 300px;
+    height: 100px;
+    border-radius: 20px;
+    position: relative;
+    left: calc(50% + 25px);
+    transform: translate(-50%, 30px) scale(0);
+    font-family: 'Futura';
+    display: none;
+    justify-content: center;
+    transition: 1s ease-in-out;
+}
+#popup:after{
+    content: "";
+    background-color: #ffffff;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    z-index: -1;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
 .project_name{
     font-size: 40px;
     color: white;
@@ -281,6 +308,7 @@ html{
     color:  #fafafa;
     font-size: 40px;
     font-family: 'Futura';
+    margin-bottom: 10px;
 }
 
 .contact_input{
@@ -303,7 +331,7 @@ html{
     outline: none;
 }
 
-.submit_btn{
+#submit_btn{
     width: 50%;
     height: 60px;
     margin-bottom: 50px;
@@ -314,8 +342,9 @@ html{
     font-family: 'Futura';
     font-size: 24px;
     border-radius: 30px;
-    border-color: #fafafa;
+    border: 0;
     cursor: not-allowed;
+    transition: 0.3s ease-in-out;
 }
 
 @media only screen and (max-width: 800px){
@@ -426,7 +455,8 @@ html{
         margin: 0;
     }
     .project_name:hover{
-        font-size: 30px;
+        font-size: 26px;
+        color: #fafafa;
     }
     .project_image{
         min-width: 0;
@@ -443,7 +473,23 @@ html{
     .title{
         font-size: 50px;
     }
+    .contact_input{
+        min-width: 0;
+        width: 90vw;
+    }
+    .contact_description{
+        font-size: 30px;
+    }
+    #popup{
+        margin-bottom: 40px;
+        left: 50%;
+    }
+    #popup_container{
+        width: 100%;
+    }
 }
+
+
 
 @media only screen and (max-width: 450px) {
     .social_icons{
