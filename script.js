@@ -39,11 +39,16 @@ var pop_up_shown = false
 
 function on_scroll(){
     var prova = document.getElementById("popup_positon_trigger").getBoundingClientRect()
-    console.log(prova.top, window.scrollY)
     if(prova.top < 600   && pop_up_shown === false){
         show_popup()
         pop_up_shown = true
     }
+
+
+    var progress_bar = document.getElementById("progress_bar")
+    var progress = ( window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100
+    progress_bar.style.width =  `${progress}%`
+    console.log(document.body.scrollHeight - window.innerHeight, window.scrollY, progress)
 }
 
 setTimeout(window.onscroll = on_scroll, 500)
@@ -51,7 +56,7 @@ setTimeout(window.onscroll = on_scroll, 500)
 
 function show_popup(){
     popup.style.display = "flex"
-    indicated_text.style.color = "rgb(0 78 255)"
+    indicated_text.style.textDecoration = "underline"
     setTimeout(function(){
         popup.style.transform = "translate(-50%, 30px) scale(1)"
     }, 100)
@@ -59,7 +64,7 @@ function show_popup(){
 }
 
 function hide_popup(){
-    indicated_text.style.color = ""
+    indicated_text.style.textDecoration = ""
     popup.style.display = "none"
 }
 
