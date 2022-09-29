@@ -37,6 +37,7 @@ var x = setInterval(function () {
   // Get today's date and time
   var st = srvTime();
   var now = new Date(st);
+  console.log(st, now)
 
   // Find the distance between now and the count down date
   var distance = countDownDate - now;
