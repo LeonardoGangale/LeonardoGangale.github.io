@@ -3,41 +3,11 @@ const text_element = document.getElementById("countdown_text")
 // Set the date we're counting down to
 var countDownDate = new Date("Oct 5, 2022 7:00:00").getTime();
 
-var xmlHttp;
-function srvTime(){
-    try {
-        //FF, Opera, Safari, Chrome
-        xmlHttp = new XMLHttpRequest();
-    }
-    catch (err1) {
-        //IE
-        try {
-            xmlHttp = new ActiveXObject('Msxml2.XMLHTTP');
-        }
-        catch (err2) {
-            try {
-                xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
-            }
-            catch (eerr3) {
-                //AJAX not supported, use CPU time.
-                alert("AJAX not supported");
-            }
-        }
-    }
-    xmlHttp.open('HEAD',window.location.href.toString(), true);
-    xmlHttp.setRequestHeader("Content-Type", "text/html");
-    xmlHttp.send('');
-    console.log(xmlHttp.getResponseHeader("Date"))
-    return xmlHttp.getResponseHeader("Date");
-}
-
-
 
 // Update the count down every 1 second
 var x = setInterval(function () {
   // Get today's date and time
-  var st = srvTime();
-  var now = new Date(st);
+  var now= new Date(); 
 
   // Find the distance between now and the count down date
   var distance = countDownDate - now;
