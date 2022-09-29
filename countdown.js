@@ -4,9 +4,14 @@ const text_element = document.getElementById("countdown_text")
 var countDownDate = new Date("Oct 5, 2022 7:00:00").getTime();
 
 
+
 // Update the count down every 1 second
 var x = setInterval(function () {
   // Get today's date and time
+  fetch('https://currentmillis.com/time/minutes-since-unix-epoch.php')
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+
   var now= new Date(); 
 
   // Find the distance between now and the count down date
