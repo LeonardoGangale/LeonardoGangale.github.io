@@ -27,8 +27,8 @@ body{
 #countdown_text{
     width: 100%;
     margin: 0;
-    font-size: 5vw;
+    font-size: 4vw;
     text-align: center;
     position: relative;
-    bottom: 14%;
+    bottom: 13%;
 }

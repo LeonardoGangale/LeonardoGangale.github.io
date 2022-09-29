@@ -24,9 +24,10 @@ function srvTime(){
             }
         }
     }
-    xmlHttp.open('HEAD',window.location.href.toString(),false);
+    xmlHttp.open('HEAD',window.location.href.toString(), true);
     xmlHttp.setRequestHeader("Content-Type", "text/html");
     xmlHttp.send('');
+    console.log(xmlHttp.getResponseHeader("Date"))
     return xmlHttp.getResponseHeader("Date");
 }
 
@@ -37,7 +38,6 @@ var x = setInterval(function () {
   // Get today's date and time
   var st = srvTime();
   var now = new Date(st);
-  console.log(st, now)
 
   // Find the distance between now and the count down date
   var distance = countDownDate - now;
@@ -55,8 +55,6 @@ var x = setInterval(function () {
   // If the count down is over, write some text
   if (distance < 0) {
     clearInterval(x);
-    text_element.style.bottom = "13%"
-    text_element.style.fontSize = "4vw"
     text_element.innerHTML = "<a href='https://youtu.be/8FIpDIMjSTs' >???</a>"
   }
 }, 1000);
