@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="conversione.css">
+    <script defer src="conversione.js"></script>
+
+    <!-- QUESTO FILE E' SOLO PER L'ANIMAZIONE DELLO SFONDO NON
+    E' IMPORTANTE PER LA LOGICA DEL PROGRAMMA! -->
+    <script defer src="animazione_canvas.js"></script>
+    <!---------------------------------------------------------------------------------------------->
+
+    <title>Convertitore di base</title>
+</head>
+
+<body>
+
+    <div class="mainContainer" data-tilt data-tilt-max="2" data-tilt-speed="2400" data-tilt-perspective="500">
+        
+        <div class="firstRow">
+            <div class="inputContainer">
+                <h3>Numero da convertire</h3>
+                <input id="numero" style="text-transform: uppercase;" required placeholder="ex: 123" class="inputField">
+            </div>
+
+            <div class="inputContainer small">
+                <h3>In base</h3>
+                <input id="base" placeholder="ex: 10" type="number" required class="inputField">
+            </div>
+        </div>  
+
+        <div class="inputContainer medium">
+            <h3>Base per la conversione</h3>
+            <input  id="baseConversione" placeholder="ex: 2" type="number" required class="inputField">
+        </div>        
+
+        <button id="convert_bttn" onclick="clickBottone()" type="submit">Converti</button>
+
+        <div class="resultContainer">
+            <h3>Risultato:<h3 id="risultato"></h3></h3>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+</body>
+</html>

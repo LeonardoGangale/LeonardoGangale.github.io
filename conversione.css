@@ -1,0 +1,129 @@
+@font-face {
+    font-family: "Futura";
+    src: url("./Futura-Med.otf");
+}
+
+body{
+    margin-top: 0.1;
+    background-image: url("./background.jpg");
+}
+
+.mainContainer{
+    width: 1000px;
+    height: 600px;
+    position: absolute;
+    left: calc(50vw - 500px);
+    top: calc(50vh - 300px);
+    border-radius: 50px;
+    background-color: #6cb4b154;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    backdrop-filter: blur(8px);
+}
+.firstRow{
+    width: calc(100% - 40px);
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top: 50px;
+    left: 20px;
+}
+
+.inputContainer{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 50px;
+    background-color: #70b3ff4d;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    backdrop-filter: blur(8px);
+}
+
+.small{
+    width: 40%;
+}
+
+.medium{
+    position: relative;
+    top: 23%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h3{
+    font-family: 'Futura';
+    font-size: 28px;
+}
+
+.inputField{
+    width:  30%;
+    height: 42px;
+    border: 0px;
+    display: flex;
+    padding-left: 10px;
+    padding-top: 8px;
+    font-family: 'Futura';
+    font-size: 25px;
+    background-color: #ff94194d;
+    border-radius: 50px;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    backdrop-filter: blur(8px);
+    transition: 0.3s ease-in-out;
+}
+
+.inputField:focus{
+    outline: none;
+    transform: scale(1.05);
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; 
+}
+
+.resultContainer{
+    width:  500px;
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #ff191988;
+    border-radius: 50px;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    position: relative;
+    left: calc(50% - 250px);
+    top: 33%;
+}
+
+#convert_bttn{
+    background-color: rgb(219, 162, 255);
+    height: 80px;
+    width: 200px;
+    border-radius: 40px;
+    font-size: 30px;
+    font-family: 'Futura';
+    border: 0px;
+    position: relative;
+    left: calc(50% - 100px);
+    top: 25%;
+    transition: 1.2s ease-in-out;
+}
+
+.active{
+    animation-name: ciro;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+}
+@keyframes ciro{
+    0% {clip-path: circle(0px at 50% 50%);}
+    20% {clip-path: circle(20px at 50% 50%);}
+    40% {clip-path: circle(40px at 50% 50%);}
+    60% {clip-path: circle(60px at 50% 50%);}
+    80% {clip-path: circle(80px at 50% 50%);}
+    100% {clip-path: circle(100px at 50% 50%);}
+}
