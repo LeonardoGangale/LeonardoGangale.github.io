@@ -23,6 +23,7 @@ body{
 .firstRow{
     width: calc(100% - 40px);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     position: relative;
     top: 50px;
@@ -60,12 +61,11 @@ h3{
 .inputField{
     width:  30%;
     height: 42px;
-    border: 0px;
     display: flex;
     padding-left: 10px;
     padding-top: 8px;
     font-family: 'Futura';
-    font-size: 25px;
+    font-size: 22px;
     background-color: #ff94194d;
     border-radius: 50px;
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -81,21 +81,26 @@ h3{
 
 .selection{
     width: 100px;
-    max-height: 200px;
-    height: 40px;
+    height: 52px;
     font-size: 22px;
-    padding: 5px 0px 5px 8px;
-    border-radius: 10px;
+    padding: 5px 0px 0px 8px;
+    border-radius: 50px;
     background-color: #ff88004d;
+    font-family: 'Futura';
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    backdrop-filter: blur(8px);
 }
 
-.option{
-    width: 100px;
+.selection:focus{
+    outline: none;
 }
 
 .resultContainer{
-    width:  500px;
+    width:  fit-content;
     height: 80px;
+    padding-right: 30px;
+    padding-left: 30px;
     display: flex;
     justify-content: space-evenly;
     background-color: #ff191988;
@@ -103,7 +108,8 @@ h3{
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     position: relative;
-    left: calc(50% - 250px);
+    left: calc(50%);
+    translate: -50%;
     top: 33%;
 }
 
@@ -133,4 +139,72 @@ h3{
     60% {clip-path: circle(60px at 50% 50%);}
     80% {clip-path: circle(80px at 50% 50%);}
     100% {clip-path: circle(100px at 50% 50%);}
+}
+
+@media only screen and (max-width: 1000px){
+    .mainContainer{
+        width: 700px;
+        left: calc(50vw - 350px);
+    }
+    h3{
+        font-size: 20px;
+    }
+    .firstRow{
+        top: 15%;
+    }
+    .medium{
+        top: 30%;
+    }
+    #convert_bttn{
+        width: 150px;
+        height: 60px;
+        font-size: 24px;
+        left: calc(50% - 75px);
+        top: 35%;
+    }
+    .small{
+        width: 40%;
+    }
+    .inputField{
+        height: 36px;
+        padding-top: 4px;
+    }
+    .resultContainer{
+        height: 70px;
+        top: 45%;
+    }
+    .selection{
+        height: 40px;
+    }
+}
+@media only screen and (max-width: 600px){
+    .mainContainer{
+        width: 400px;
+        left: calc(50vw - 200px);
+    }
+    h3{
+        font-size: 18px;
+    }
+    .firstRow{
+        width: 100%;
+        left: 0;
+    }
+    .inputContainer{
+        width: 80%;
+        margin-bottom: 5%;
+    }
+    .medium{
+        width: 80%;
+        top: 20%;
+    }
+    .small{
+        width: 50%;
+    }
+    #convert_bttn{
+        top: 20%;
+    }
+    .resultContainer{
+        top: 28%;
+        height: 60px;
+    }
 }

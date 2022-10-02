@@ -3,33 +3,42 @@ const inputBase = document.getElementById("base")
 const inputBaseConversione = document.getElementById("baseConversione")
 const outputRisultato = document.getElementById("risultato")
 
-let numero
+const bottone = document.getElementById("convert_bttn")
+
 let stringaNumero
-let base
-let baseConversione
+let base = 10
+let baseConversione = 2
 let numeroInBaseDieci = 0
 
 let arrayResti = []
 let risultato = []
 
-for (let i = 2; i <= 36; i++){
-    console.log(`<option class="option"> ${i} </option>`)
-}
 
 // DICHARO UN' ARRAY DI LETTERE DELL'ALFABETO CHE UTILIZZERO' POI PER LE BASI MAGGIORI DI 10
 
 const alfabeto = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
 function sceltaBase(){
-    console.log(inputBase.options[inputBase.selectedIndex].text)
+    base = parseInt(inputBase.options[inputBase.selectedIndex].text)
+}
+
+function sceltaBaseConversione () {
+    baseConversione = parseInt(inputBaseConversione.options[inputBaseConversione.selectedIndex].text)
 }
 
 function clickBottone(){
     
+    // INFLUENZA LO STILE DEL BOTTONE 
+    bottone.classList.add("active")
+    setTimeout(
+        () => {
+            bottone.classList.remove("active")
+        }, 300
+    )
+    
+
     // INIZIALIZZA LE VARIBILI PER IL PRIMO UTILIZZO E PER QUELLI SUCCESSIVI
     stringaNumero = inputNumero.value
-    base =  parseInt(inputBase.value)
-    baseConversione = parseInt(inputBaseConversione.value)
     arrayResti = []
     risultato = []
     numeroInBaseDieci = 0

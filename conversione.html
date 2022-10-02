@@ -36,7 +36,7 @@
                     <option class="option"> 7 </option>
                     <option class="option"> 8 </option>
                     <option class="option"> 9 </option>
-                    <option class="option"> 10 </option>
+                    <option class="option" selected="true"> 10 </option>
                     <option class="option"> 11 </option>
                     <option class="option"> 12 </option>
                     <option class="option"> 13 </option>
@@ -69,13 +69,49 @@
 
         <div class="inputContainer medium">
             <h3>Base per la conversione</h3>
-            <input  id="baseConversione" placeholder="ex: 2" type="number" required class="inputField">
+            <select id = "baseConversione" class="selection" onchange = "sceltaBaseConversione()">
+                <option class="option" selected="true"> 2 </option>
+                <option class="option"> 3 </option>
+                <option class="option"> 4 </option>
+                <option class="option"> 5 </option>
+                <option class="option"> 6 </option>
+                <option class="option"> 7 </option>
+                <option class="option"> 8 </option>
+                <option class="option"> 9 </option>
+                <option class="option"> 10 </option>
+                <option class="option"> 11 </option>
+                <option class="option"> 12 </option>
+                <option class="option"> 13 </option>
+                <option class="option"> 14 </option>
+                <option class="option"> 15 </option>
+                <option class="option"> 16 </option>
+                <option class="option"> 17 </option>
+                <option class="option"> 18 </option>
+                <option class="option"> 19 </option>
+                <option class="option"> 20 </option>
+                <option class="option"> 21 </option>
+                <option class="option"> 22 </option>
+                <option class="option"> 23 </option>
+                <option class="option"> 24 </option>
+                <option class="option"> 25 </option>
+                <option class="option"> 26 </option>
+                <option class="option"> 27 </option>
+                <option class="option"> 28 </option>
+                <option class="option"> 29 </option>
+                <option class="option"> 30 </option>
+                <option class="option"> 31 </option>
+                <option class="option"> 32 </option>
+                <option class="option"> 33 </option>
+                <option class="option"> 34 </option>
+                <option class="option"> 35 </option>
+                <option class="option"> 36 </option>
+                </select>
         </div>        
 
         <button id="convert_bttn" onclick="clickBottone()" type="submit">Converti</button>
 
         <div class="resultContainer">
-            <h3>Risultato:<h3 id="risultato"></h3></h3>
+            <h3>Risultato:&nbsp;<h3 id="risultato"></h3></h3>
         </div>
 
     </div>
