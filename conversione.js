@@ -12,9 +12,17 @@ let numeroInBaseDieci = 0
 let arrayResti = []
 let risultato = []
 
+for (let i = 2; i <= 36; i++){
+    console.log(`<option class="option"> ${i} </option>`)
+}
+
 // DICHARO UN' ARRAY DI LETTERE DELL'ALFABETO CHE UTILIZZERO' POI PER LE BASI MAGGIORI DI 10
 
 const alfabeto = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+
+function sceltaBase(){
+    console.log(inputBase.options[inputBase.selectedIndex].text)
+}
 
 function clickBottone(){
     
@@ -33,15 +41,7 @@ function clickBottone(){
         alert("inserisci un numero corretto")
     } 
 
-    //if (base <= 10){ 
-        // SE LA BASE DI PARTENZA E' MINORE O UGUALE A 10, CONVERTO IL NUMERO IN BASE 10
-        // COSI' POI MI BASTA SEMPLICEMENTE DIVIDERE
-        convertiInBaseDieci()
-    //} else {
-        // ALTRIMENTI CONVERTO IL NUMERO IN BASE MASSIMA (36: perchè 10 + 26 lettere)
-      //  convertiInBaseMax ()
-   // }
-    
+    convertiInBaseDieci()
     
 }
 
