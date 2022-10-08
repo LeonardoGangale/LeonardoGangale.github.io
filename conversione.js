@@ -79,7 +79,7 @@ function convertiInBaseMinore (numeroInBaseDieci) {
     let restoDellaDivisione = numeroInBaseDieci % baseConversione
     console.log(`resto della divisione: ${restoDellaDivisione}`)
 
-    if (restoDellaDivisione > 10){
+    if (restoDellaDivisione > 9){
         arrayResti.push(alfabeto[restoDellaDivisione - 10].toUpperCase())
     } else {
         arrayResti.push(numeroInBaseDieci % baseConversione)
