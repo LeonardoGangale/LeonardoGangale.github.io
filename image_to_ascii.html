@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <title>Image to ascii</title>
+</head>
+
+<body>
+    <input type="file" id="inputFile" accept="image/png, image/jpeg" />
+    <button onclick="drawASCII()">CONVERT</button>
+    <button id="increaseCharBtn" onclick="changeCharacters()">USE MORE CHARACTERS</button>
+    <button id="changeStyleBtn" onclick="changeStyle()">INVERT</button>
+    <button id="changeResolution" onclick="changeResolution()">INCREASE RESOLUTION</button>
+    <button onclick="changeToColored()">USE COLORS</button>
+    <span id="loadingText"></span>
+    <div class="canvasContainer">
+        <canvas width="0" height="0" id="canvas"></canvas>
+        <canvas width="0" height="0" id="canvas2"></canvas>
+    </div>
+
+</body>
+
+</html>
