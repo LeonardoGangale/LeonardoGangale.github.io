@@ -9,10 +9,10 @@ const windowWidth = window.innerWidth;
 var windowUnit = windowWidth / 300;
 
 document.getElementById('inputFile').addEventListener('change', handleImageInput);
-const loadingText = document.getElementById('loadingText');
+const loadingAnimation = document.getElementsByClassName("lds-ring")[0];
 
 function handleImageInput(event) {
-    loadingText.innerHTML = 'Loading...';
+    loadingAnimation.style.display = "inline-block"
 	const input = event.target;
 
 	if (input.files && input.files[0]) {
@@ -51,7 +51,7 @@ function drawImage(image_src) {
 		window.unitX = (img.width / img.width) * scaleX;
 		window.unitY = (img.height / img.width) * scaleY;
 		ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-		loadingText.innerHTML = 'Loaded.';
+		loadingAnimation.style.display = "none"
 	};
 }
 
