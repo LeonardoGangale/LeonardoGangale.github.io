@@ -1,147 +1,129 @@
 
-var canvas = document.getElementById('canvas');
-var ctx = canvas.getContext('2d');
+function show_menu(){
+    var menu = document.getElementById("menu");
+    var menu_btn = document.getElementsByClassName("header_menu_btn")[0];
+    window.menu_btn_svg = menu_btn.innerHTML;
 
-var canvas2 = document.getElementById('canvas2');
-var ctx2 = canvas2.getContext('2d', { willReadFrequently: true });
+    menu.style.transform = "translate(0%, 0%)"
+    menu_btn.onclick = close_menu
 
-const windowWidth = window.innerWidth;
-var windowUnit = windowWidth / 300;
+    menu_btn.classList.add("animate")
 
-document.getElementById('inputFile').addEventListener('change', handleImageInput);
-const loadingText = document.getElementById('loadingText');
+    menu_btn.innerHTML = `<svg style="fill: white; height: 70px; width: 35px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>`
 
-function handleImageInput(event) {
-    loadingText.innerHTML = 'Loading...';
-	const input = event.target;
-
-	if (input.files && input.files[0]) {
-		let image_src = '';
-		const reader = new FileReader();
-		reader.readAsDataURL(input.files[0]);
-
-		reader.onload = function (e) {
-			image_src = e.target.result;
-			drawImage(image_src);
-		};
-	}
+    setTimeout(function()   {
+        menu_btn.classList.remove("animate")
+    }, 1000)
 }
 
+function close_menu(){
+    var menu = document.getElementById("menu");
+    var menu_btn = document.getElementsByClassName("header_menu_btn")[0];
 
-var pixel, r, g, b, avg, unitX, unitY, scaleX = 2, scaleY = 2, charToDraw;
-var characters;
-var charQuantity;
-var useMoreCharacters = false;
-var backgroundColor = 'white';
-var charColor = 'black';
-var inverted = false;
-var colored = false;
 
-function drawImage(image_src) {
-	const img = new Image();
-	img.src = image_src;
+    menu.style.transform = "translate(0%, -100%)"
 
-	img.onload = function () {
-		canvas.width = windowWidth / 3;
-		canvas.height = canvas.width / (img.width / img.height);
+    menu_btn.innerHTML = menu_btn_svg
 
-		canvas2.width = windowWidth / 3;
-		canvas2.height = canvas2.width / (img.width / img.height);
 
-		window.unitX = (img.width / img.width) * scaleX;
-		window.unitY = (img.height / img.width) * scaleY;
-		ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-		loadingText.innerHTML = 'Loaded.';
-	};
+    menu_btn.onclick = show_menu
+
 }
 
-function drawASCII() {
-	if (useMoreCharacters) {
-		characters = " .'`,:;Il!i><~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$";
-	} else {
-		characters = ' .:-=+*#%@';
-	}
-	charQuantity = characters.length;
+var bodyRect = document.body.getBoundingClientRect()
+const popup = document.getElementById("popup")
+const popup_container = document.getElementById("popup_container")
+const indicated_text = document.getElementById("popup_positon_trigger")
 
-	ctx2.fillStyle = backgroundColor;
-	ctx2.fillRect(0, 0, canvas2.width, canvas2.height);
+var pop_up_shown = false
 
-	if (colored === false) {
-		for (let y = 0; y <= canvas.height; y += unitY) {
-			for (let x = 0; x <= canvas.width; x += unitX) {
-				pixel = ctx.getImageData(x, y, unitX, unitY);
-				r = pixel.data[0];
-				g = pixel.data[1];
-				b = pixel.data[2];
-				avg = (r + g + b) / 3;
-				charToDraw = characters[Math.round((avg * (charQuantity - 1)) / 255)];
+function on_scroll(){
+    var prova = document.getElementById("popup_positon_trigger").getBoundingClientRect()
+    if(prova.top < 600   && pop_up_shown === false){
+        show_popup()
+        pop_up_shown = true
+    }
 
-				ctx2.fillStyle = charColor;
-				ctx2.font = `${unitX * 1.8}px helvetica bold`;
-				ctx2.fillText(charToDraw, x, y);
-			}
-		}
-	} else {
-		for (let y = 0; y <= canvas.height; y += unitY) {
-			for (let x = 0; x <= canvas.width; x += unitX) {
-				pixel = ctx.getImageData(x, y, unitX, unitY);
-				r = pixel.data[0];
-				g = pixel.data[1];
-				b = pixel.data[2];
-				avg = (r + g + b) / 3;
-				charToDraw = characters[Math.round((avg * (charQuantity - 1)) / 255)];
 
-				ctx2.fillStyle = `rgb(${r}, ${g}, ${b})`;
-				ctx2.font = `${unitX * 2}px helvetica bold`;
-				ctx2.fillText(charToDraw, x, y);
-			}
-		}
-	}
+    var progress_bar = document.getElementById("progress_bar")
+    var progress = ( window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100
+    progress_bar.style.width =  `${progress}%`
+    console.log(document.body.scrollHeight - window.innerHeight, window.scrollY, progress)
 }
 
-const increaseCharBtn = document.getElementById('increaseCharBtn');
+setTimeout(window.onscroll = on_scroll, 500)
 
-function changeCharacters() {
-	if (useMoreCharacters) {
-		increaseCharBtn.innerHTML = 'USE MORE CHARACTERS';
-		useMoreCharacters = false;
-	} else {
-		increaseCharBtn.innerHTML = 'USE LESS CHARACTERS';
-		useMoreCharacters = true;
-	}
-	drawASCII();
+
+function show_popup(){
+    popup.style.display = "flex"
+    indicated_text.style.textDecoration = "underline"
+    setTimeout(function(){
+        popup.style.transform = "translate(-50%, 30px) scale(1)"
+    }, 100)
+    setTimeout(hide_popup, 10000)
 }
 
-function changeStyle() {
-	if (inverted === false) {
-		backgroundColor = 'black';
-		charColor = 'white';
-		inverted = true;
-	} else {
-		backgroundColor = 'white';
-		charColor = 'black';
-		inverted = false;
-	}
-
-	drawASCII();
+function hide_popup(){
+    indicated_text.style.textDecoration = ""
+    popup.style.display = "none"
 }
 
-function changeToColored() {
-	if (colored === false) {
-		colored = true;
-	} else {
-		colored = false;
-	}
-	drawASCII();
+function on_resize(){
+    var width = window.innerWidth
+    var ig_link = document.getElementById("instagram_link")
+    var twitter_link = document.getElementById("twitter_link")
+    var icons_container = document.getElementsByClassName("header_icons")[0]
+
+    if (width < 450){
+        ig_link.style.display = "none"
+        twitter_link.style.display = "none"
+        icons_container.style.width = "70px"
+    } else{
+        ig_link.style.display = "flex"
+        twitter_link.style.display = "flex"
+        icons_container.style.width = "200px"
+        icons_removed = false
+    }
 }
 
-function changeResolution(){
-    if(scaleX === 2){
-        scaleX = 1;
-        scaleY = 1;   
-    } else {
-        scaleX = 2;
-        scaleY = 2;   
+setTimeout(on_resize, 100)
+
+window.addEventListener("resize", on_resize)
+
+
+function auto_height(form_input){
+    form_input.style.height = "46px"
+    form_input.style.height =   (form_input.scrollHeight )+"px"
+    if(parseInt(form_input.style.height) > 54 ){
+        window.scrollBy(0, 40)
+    }
+
+}
+
+function input_form_focus(value){
+    window.form_description = document.getElementById(`description_${value}`)
+
+    form_description.style.color = "rgb(94, 218, 255)"
+}
+
+function  input_form_focusout(ciro){
+    form_description.style.color = "#fafafa"
+}
+
+const email = document.getElementById("email_input")
+const name_input = document.getElementById("name_input")
+const subject = document.getElementById("subject_input")
+const submit_btn = document.getElementById("submit_btn")
+
+function check_input(){
+    if(email.checkValidity() && name_input.value.length > 1 && subject.value.length > 1){
+        submit_btn.style.backgroundColor = "green"
+        submit_btn.style.color = "#fafafa"
+        submit_btn.style.cursor = "pointer"
+    } else{
+        submit_btn.style.backgroundColor = "#fafafa"
+        submit_btn.style.color = "black"
+        submit_btn.style.cursor = "not-allowed"
     }
 
 }
